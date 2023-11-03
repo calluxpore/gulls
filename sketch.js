@@ -6,6 +6,8 @@ let cycleDuration = 20000; // Total cycle duration (20 seconds)
 let waveSound; // Variable to hold our sound file
 let permissionGranted = false;
 let permissionButton;
+let carryButton;
+
 
 function preload() {
   // Load the sound file
@@ -23,20 +25,54 @@ function setup() {
 
   // Create permission button for iOS devices
   permissionButton = createButton('START');
-  permissionButton.position(width / 2 - 50, height / 2 - 15);
-  permissionButton.size(100, 30);
-  permissionButton.style('font-size', '20px');
-  permissionButton.style('font-family', 'Arial');
-  permissionButton.style('color', ' black');
-  permissionButton.style('background-color', 'white');
-  permissionButton.style('border', 'none');
-  permissionButton.style('border-radius', '15px');
-  
-
+  let xPosPermission = width / 2 - permissionButton.width / 2;  // Central x-position based on permissionButton width
+  permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
+  permissionButton.style('font-size', '5em');  // Matched font size
+  permissionButton.style('padding', '40px 80px');  // Matched padding to adjust size
+  permissionButton.style('background-color', 'white');  // Matched background color
+  permissionButton.style('color', 'black');  // Matched text color
+  permissionButton.style('border', 'none');  // Matched border
+  permissionButton.style('border-radius', '90px');  // Matched border radius
+  permissionButton.style('cursor', 'pointer');  // Matched cursor style
   permissionButton.mousePressed(requestPermission);
+  permissionButton.center();
+
+  // Create the "Carry the calmness with you" button
+  carryButton = createButton('Carry the calmness with you');
+  carryButton.style('font-size', '45px');
+  carryButton.size(650, 100);
+  let xPosCarry = width / 2 - 650 / 2;  // Central x-position based on carryButton width
+  carryButton.position(xPosCarry, height - 200);  // Adjust the y-position to your liking
+  carryButton.style('background-color', 'rgb(169, 169, 169)');  // Set background color to grey
+  carryButton.style('color', 'white');
+  carryButton.style('border', 'none');
+  carryButton.style('border-radius', '100px');
+  carryButton.mousePressed(() => {
+    window.location.href = 'fifth.html';
+  });
+  carryButton.hide();  // Initially hide the button
+
+  // Schedule to show the button after 1 minute
+  setTimeout(() => {
+    carryButton.show();
+  }, 60000);
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    let xPosPermission = width / 2 - permissionButton.width / 2;  // Update x-position on window resize
+    let xPosCarry = width / 2 - carryButton.width / 2;  // Update x-position on window resize
+    carryButton.position(xPosCarry, height - 100);  // Adjust the y-position to your liking
+    permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position of permissionButton
+  }
 
   // Sync with universal time
   syncWithUniversalTime();
+}
+
+function windowResized() {
+  // console.log('windowWidth:', windowWidth, 'windowHeight:', windowHeight);
+  resizeCanvas(windowWidth, windowHeight);
+  // ... rest of your code
 }
 
 function draw() {

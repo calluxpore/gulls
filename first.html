@@ -1,0 +1,81 @@
+<!-- FIRST.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            /* Use min-height instead of height */
+        }
+
+        header {
+            text-align: center;
+            padding: 5%;
+        }
+
+        main {
+            padding: 1em;
+            text-align: center;
+            flex-grow: 1;
+            /* Allow main to grow */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            padding: 1em;
+            padding-bottom: 45%;
+            text-align: center;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 40px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        h1 {
+            margin-top: 20%;
+            margin-bottom: 0.5em;
+            font-size: 3.5em;
+        }
+
+        p {
+            margin: 0.6em 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    <main>
+        <p>Sit and take a few breaths,<br> remove your coat,<br>and put down your bag;</p>
+        <p>if you are able,<br>remove your shoes,<br>and place them under your chair.</p>
+    </main>
+    <footer>
+        <a href="second.html"><button>Next</button></a>
+    </footer>
+</body>
+
+</html>
