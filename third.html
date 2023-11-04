@@ -1,12 +1,22 @@
-<!-- third.html -->
+<!-- 
+    Group: Team B
+    Members: Orus, Valen, Carol, Samarth
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character encoding and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the web page -->
     <title>Journey</title>
+
+    <!-- Styles for the web page -->
     <style>
+        /* Resetting some default browser styles */
         body {
             background-color: black;
             color: white;
@@ -17,31 +27,33 @@
             flex-direction: column;
             justify-content: space-between;
             min-height: 100vh;
-            /* Use min-height instead of height */
         }
 
+        /* Styling for the header section */
         header {
             text-align: center;
             padding: 5%;
         }
 
+        /* Styling for the main content section */
         main {
             padding: 1em;
             text-align: center;
             flex-grow: 1;
-            /* Allow main to grow */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
+        /* Styling for the footer section */
         footer {
             padding: 1em;
             padding-bottom: 45%;
             text-align: center;
         }
 
+        /* Styling for buttons */
         button {
             background-color: white;
             color: black;
@@ -52,30 +64,38 @@
             cursor: pointer;
         }
 
+        /* Styling for headings */
         h1 {
             margin-top: 20%;
             margin-bottom: 0.5em;
             font-size: 3.5em;
         }
 
+        /* Styling for paragraphs */
         p {
             margin: 0.6em 0;
             font-size: 1.1em;
         }
     </style>
-    <!-- Linking to the sketch.js file -->
+
+    <!-- Linking to the external JavaScript file -->
     <script src="sketch.js"></script>
 </head>
 
 <body>
+    <!-- Header section with instructions title -->
     <header>
         <h1>When you are ready</h1>
     </header>
+
+    <!-- Main content section with instructions for visitors -->
     <main>
         <p>Walk and hand your phone to the <br> monitor, or wait for them to come <br> collect it from you.</p>
     </main>
+
+    <!-- Footer section with a navigation button -->
     <footer>
-        <!-- Updated button to trigger navigation to index.html -->
+        <!-- Navigation button linking to the index.html page -->
         <a href="index.html"><button>Begin your journey</button></a>
     </footer>
 </body>
